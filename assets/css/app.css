@@ -196,3 +196,16 @@ footer {
   margin-top: 550px;
 }
 
+#webcam {
+  padding-bottom: 10px;
+}
+
+#webcams .playlist {
+  width: 250px;
+}
+
+#webcams .playlist md-card-title {
+  text-transform: lowercase;
+  padding: 24px 16px 0px;
+}
+

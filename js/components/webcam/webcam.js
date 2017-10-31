@@ -21,6 +21,7 @@ angular.module('app').component("webcam", { // On vient là grace à index.js qu
         WebcamService.getWebcam(lat, lon, 5).then((webcams) => {
 
           this.webcams = webcams;
+          this.webcams.splice(1, 7);
 
         }).catch((err) => {
           this.showToast({
