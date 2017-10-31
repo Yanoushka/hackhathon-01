@@ -3,9 +3,10 @@
   src: url('/assets/fonts/roboto/Roboto-Regular.woff') format('woff')
 }
 
+
 html,
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 16px;
 }
 
@@ -83,7 +84,9 @@ h6 {
 	background-size: 400% 400%;
 	-webkit-animation: Gradient 15s ease infinite;
 	-moz-animation: Gradient 15s ease infinite;
-	animation: Gradient 15s ease infinite;
+  animation: Gradient 15s ease infinite;
+  font-size: 1.5em;
+  font-family: 'Poppins', sans-serif;
 }
 
 @-webkit-keyframes Gradient {
@@ -144,4 +147,42 @@ md-input-container {
   margin: 100px 0;
   vertical-align: middle;
   width: 100%;
+}
+
+md-input-container.md-input-focused label {
+  display: none
+}
+
+.ng-binding {
+  font-size: 1.2em;
+}
+
+button {
+	width: 17px;
+	height: 17px;
+	font-size: 0;
+	background-color: red;
+	border: 0;
+	border-radius: 35px;
+	margin: 18px;
+	outline: none;
+}
+
+.Rec{
+	animation-name: pulse;
+	animation-duration: 1.5s;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+}
+
+@keyframes pulse{
+	0%{
+		box-shadow: 0px 0px 5px 0px rgba(173,0,0,.3);
+	}
+	65%{
+		box-shadow: 0px 0px 5px 13px rgba(173,0,0,.3);
+	}
+	90%{
+		box-shadow: 0px 0px 5px 13px rgba(173,0,0,0);
+	}
 }
