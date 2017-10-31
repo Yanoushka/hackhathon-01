@@ -3,7 +3,7 @@
 /**
  * The Weather component
  */
-angular.module('weatherMood.components').component("weather", { // On vient là grace à index.js qui lui même vient de app.js
+angular.module('app').component("weather", { // On vient là grace à index.js qui lui même vient de app.js
 
   templateUrl: '/js/components/weather/weather.html', // Tu agira dans le template weather.html
 
@@ -12,7 +12,7 @@ angular.module('weatherMood.components').component("weather", { // On vient là 
     showLoader: '&'
   },
 
-  controller: function (WeatherService, $scope) { // on déclare un objet controller : qui à pour valeur une fonction qui prend en paramètre 
+  controller: function (WeatherService, $rootScope) { // on déclare un objet controller : qui à pour valeur une fonction qui prend en paramètre 
                                                   // notre service, ainsi que le scope qui est en faite la ville que l'on veut.
     'ngInject'; // Impact sur l'autre ngInject ?
 
@@ -27,6 +27,7 @@ angular.module('weatherMood.components').component("weather", { // On vient là 
 
         // Save meteo data for the requested city
         this.data = data; // Et le querry fut data
+        $rootScope.$broadcast('GET_WEBCAMS', data.coord.lat, data.coord.lon);
 
       }).catch((err) => { // A voir
         this.showToast({message: err}); // A voir
@@ -34,23 +35,5 @@ angular.module('weatherMood.components').component("weather", { // On vient là 
         this.showLoader({show: false}); // A voir
       });
     };
-
-    this.getWebcam = (queryT, queryG) => {
-
-      this.showLoader({show: true}); // A voir avec le binding on verra plus tard
-
-      WeatherService.getWebcam(queryT, queryG).then((lat, lng) => {
-        
-        this.lat = lat;
-        this.lng = lng;
-
-      }).catch((err) => {
-        this.showToast({message: err});
-      }).finally(() => {
-        this.showLoader({show: false});
-      });
-    };
-
-  }
-
+   }
 });
