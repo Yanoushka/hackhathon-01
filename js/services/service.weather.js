@@ -11,7 +11,8 @@ angular.module('weatherMood.services').service('WeatherService',
     const API_URL = "http://api.openweathermap.org/data/2.5/weather?lang=fr&units=metric&q="; // première partie de la route
     const API_KEY = "2c8c22e7283717b657e8dd338db9fc51"; // key de connexion
     const LOGNS = 'WS ::';
-
+    const API = "https://webcamstravel.p.mashape.com/webcams/list/nearby=";
+    
     /**
      * Request the weather for the given city
      */
@@ -42,4 +43,25 @@ angular.module('weatherMood.services').service('WeatherService',
       return deferred.promise; // Return peu importe trouvé ou erreur
     };
 
-  });
+    
+      this.getWebcam = (lat, lng) => {
+  
+        let radius = 5;
+    
+        $log.debug(LOGNS, `requesting ${lat} ${lng} weather`); // Affiche une erreur
+        var deferred = $q.defer(); // defer = ?
+  
+        $http.get(API + lat + lng + radius).then((response) => {
+  
+          // $log.debug(LOGNS, `${city} weather is ${response.data.weather[0].main}`);
+          deferred.resolve(response.data);
+        }).catch((error) => {
+          var message = error.data ? error.data.message : error.message || error.statusText;
+          $log.debug(LOGNS, `${lat} ${lng} weather request error ${message}`);
+          deferred.reject(message); // Erreur
+        });
+    
+        return deferred.promise;
+      };
+
+});

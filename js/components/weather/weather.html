@@ -24,10 +24,15 @@
     </div>
   </div>
   <div layout-gt-xs="row" layout="column">
-    <div flex-gt-xs="50" flex>
-
-    </div>
+      <div flex-gt-xs="50" flex>
+        <h2>Webcams de la ville</h2>
+      </div>            
   </div>
+
+  <div layout-gt-xs="row" flex="70" layout="column" ng-if="$ctrl.data.coord.lat && $ctrl.data.coord.lon">
+    <div>{{$ctrl.data.coord.lat}} lat </div>
+    <div>{{$ctrl.data.coord.lon}} lon</div>       
+  </div>  
 </md-content>
 
 <div layout="row" layout-md="column">
@@ -44,3 +49,4 @@
     <button class="Rec"></button>
   </div>
 </div>
+
