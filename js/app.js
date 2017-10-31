@@ -10,3 +10,4 @@ const app = angular.module('weatherMoodApp', [
   'weatherMood.components', // On va voir dans le dossier siuté à js/compenents
   'weatherMood.services' // On va voir dans le dossier situé à js/service
 ]);
+
