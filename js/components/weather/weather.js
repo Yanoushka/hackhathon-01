@@ -35,6 +35,22 @@ angular.module('weatherMood.components').component("weather", { // On vient là 
       });
     };
 
+    this.getWebcam = (queryT, queryG) => {
+
+      this.showLoader({show: true}); // A voir avec le binding on verra plus tard
+
+      WeatherService.getWebcam(queryT, queryG).then((lat, lng) => {
+        
+        this.lat = lat;
+        this.lng = lng;
+
+      }).catch((err) => {
+        this.showToast({message: err});
+      }).finally(() => {
+        this.showLoader({show: false});
+      });
+    };
+
   }
 
 });
