@@ -1,5 +1,5 @@
-<md-content layout-padding>
-  <div layout-gt-xs="row" layout="column">
+<md-content layout-padding >
+  <div layout-gt-xs="row" layout-align="center" layout="column">
     <div flex-gt-xs="50" flex>
       <form ng-submit="$ctrl.getWeather($ctrl.query)">
         <!-- Le this de weather.js vient de là, il prend en paramètre querry dont le this etc-->
@@ -10,9 +10,10 @@
           <!-- On choppe le query dans le input -->
         </md-input-container>
       </form>
+
     </div>
       <div flex-gt-xs="50" flex>
-        <div layout="row">
+        <div layout="row" >
           <div flex="10" ng-if="$ctrl.data">
             <img ng-src="{{$ctrl.data.icon}}"/>
           </div>
@@ -25,19 +26,21 @@
         </div>
       </div>
   </div>
-  <div layout-gt-xs="row" layout="column">
-      <div flex-gt-xs="50" flex>
-        <h2>Webcams de la ville</h2>
-      </div>            
-  </div>
-
-  <div layout-gt-xs="row" flex="70" layout="column" ng-if="$ctrl.data.coord.lat && $ctrl.data.coord.lon">
-    <div>{{$ctrl.data.coord.lat}} lat </div>
-    <div>{{$ctrl.data.coord.lon}} lon</div>       
-  </div>  
 </md-content>
 
-<div layout="row" layout-md="column">
+<md-content layout-padding>
+    <div layout="row" layout-align="center" layout-md="column">
+       
+        <div class="container">
+          <div class="sunny"></div>
+          <div class="rainy"></div>
+          <div class="rainbow"></div>
+          <div class="stormy"></div>
+        </div>
+    </div>
+</md-content>
+
+<div layout="row" layout-align="center" layout-md="column">
   <div flex>
     CAM 1
     <button class="Rec"></button>
