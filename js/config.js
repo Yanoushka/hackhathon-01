@@ -10,6 +10,7 @@ angular.module('weatherMoodApp')
     $mdThemingProvider.theme('docs-dark', 'default')
       .primaryPalette('brown')
       .dark();
-
-      
   });
+
+
+ 

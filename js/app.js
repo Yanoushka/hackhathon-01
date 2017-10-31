@@ -11,3 +11,11 @@ const app = angular.module('weatherMoodApp', [
   'weatherMood.services' // On va voir dans le dossier situé à js/service
 ]);
 
+$(document).ready(function() {
+  
+   // Fakes the loading setting a timeout
+     setTimeout(function() {
+         $('body').addClass('loaded');
+     }, 3500);
+  
+ });
