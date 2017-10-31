@@ -3,7 +3,7 @@
 /**
  * The AngularJS WeatherMood app configrution
  */
-angular.module('weatherMoodApp')
+angular.module('app')
 
   .config(function ($mdThemingProvider) {
 

@@ -1,0 +1,43 @@
+<md-content layout-padding>
+
+  <div layout-gt-xs="row" layout="column">
+    <div flex-gt-xs="50" flex>
+      <h2>Webcams de la ville</h2>
+    </div>
+  </div>
+
+  <div class="layout" ng-repeat="webcam in $ctrl.webcams">
+    <div flex-gt-xs="20" flex>
+      <div><img src="{{webcam.image.current.preview}}" href="https://lookr.com/{{webcam.id}}"></div>    
+  </div>
+  </div>
+  <div layout="row" layout-md="column">
+    <div flex>
+      CAM 1
+      <button class="Rec"></button>
+    </div>
+    <div flex>
+      CAM 2
+      <button class="Rec"></button>
+    </div>
+    <div flex>
+      CAM 3
+      <button class="Rec"></button>
+    </div>
+  </div>
+</md-content>
+<!-- 
+<div class="message" ng-repeat="message in $ctrl.messages  track by message.id" ng-class="{wilder: message.wilder}">
+  <span class="icon trash" ng-click="$ctrl.delete(message.id)">
+    <i class="glyphicon glyphicon-trash"></i>
+  </span>
+  <span class="icon like" ng-click="$ctrl.changeLike(message)">
+    <i class="glyphicon glyphicon-{{message.like ? 'heart' : 'heart-empty'}}"></i>
+  </span>
+  <div class="header">
+    Posté le {{message.date | date:'dd/MM/yyyy à hh:mm'}}
+  </div>
+  <div class="content">
+    {{message.content}}
+  </div>
+</div> -->
