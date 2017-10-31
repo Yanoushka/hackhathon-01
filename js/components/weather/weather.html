@@ -1,27 +1,29 @@
 <md-content layout-padding>
   <div layout-gt-xs="row" layout="column">
     <div flex-gt-xs="50" flex>
-      <form ng-submit="$ctrl.getWeather($ctrl.query)"> <!-- Le this de weather.js vient de là, il prend en paramètre querry dont le this etc-->
+      <form ng-submit="$ctrl.getWeather($ctrl.query)">
+        <!-- Le this de weather.js vient de là, il prend en paramètre querry dont le this etc-->
         <md-input-container>
+            
           <label>Je souhaite obtenir la météo de...</label>
-          <input ng-model="$ctrl.query"/> <!-- On choppe le query dans le input -->
+          <input ng-model="$ctrl.query" />
+          <!-- On choppe le query dans le input -->
         </md-input-container>
       </form>
     </div>
-    <div flex-gt-xs="50" flex>
-      <div layout="row">
-        <div flex="10" ng-if="$ctrl.data">
-          <img ng-src="{{$ctrl.data.icon}}" />
-        </div>
-        <div flex="70" ng-if="$ctrl.data">
-          <div>À {{$ctrl.data.name}}, {{$ctrl.data.weather[0].description}}.</div>
-          <div>Le thermomètre affiche {{$ctrl.data.main.temp_min}} °C de minimales</div>
-          <div>et {{$ctrl.data.main.temp_max}} °C de maximales.</div>
-          <div>{{$ctrl.data.coord.lon}} lon</div>
-          <div>{{$ctrl.data.coord.lat}} lat</div>          
+      <div flex-gt-xs="50" flex>
+        <div layout="row">
+          <div flex="10" ng-if="$ctrl.data">
+            <img ng-src="{{$ctrl.data.icon}}"/>
+          </div>
+          <div flex="70" ng-if="$ctrl.data">
+            <div>À <b>{{$ctrl.data.name}}</b>, {{$ctrl.data.weather[0].description}}.</div>
+            <div>Le thermomètre affiche <b>{{$ctrl.data.main.temp_min}} °C </b>de minimales</div>
+            <div>et <b>{{$ctrl.data.main.temp_max}} °C </b>de maximales.</div>
+            <div>Le taux d'humidité est de <b>{{$ctrl.data.main.humidity}}%</b>.</div>
+          </div>
         </div>
       </div>
-    </div>
   </div>
   <div layout-gt-xs="row" layout="column">
       <div flex-gt-xs="50" flex>
@@ -36,7 +38,7 @@
 </md-content>
 
 <div layout="row" layout-md="column">
-  <div flex>  
+  <div flex>
     CAM 1
     <button class="Rec"></button>
   </div>
