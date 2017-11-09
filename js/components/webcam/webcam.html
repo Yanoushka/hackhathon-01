@@ -1,0 +1,16 @@
+<md-content layout-padding>
+
+  <div layout="row" layout-align="space-around none" layout-wrap>
+    <md-card class="city" flex="nogrow" ng-repeat="webcam in $ctrl.webcams">
+      <img ng-src="{{webcam.image.current.preview}}" class="md-card-image" alt="{{webcam.title}}" />
+      <md-card-title>
+        <md-card-title-text>
+          <span class="md-headline">{{webcam.title}}</span>
+        </md-card-title-text>
+      </md-card-title>
+      <md-card-actions>
+          <a href="https://lookr.com/{{webcam.id}}" target="_blank"><button class="Rec"></button></a>
+      </md-card-actions>
+    </md-card>
+  </div>
+</md-content>
