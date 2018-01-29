@@ -15,3 +15,4 @@ Use:
 
 Install:
 - First launch ```npm install```to get modules
+- Then run the app using the command "live-server"
